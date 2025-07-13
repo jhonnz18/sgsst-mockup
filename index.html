@@ -3,360 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SG-SST Bogotá | Seguridad y Salud en el Trabajo</title>
+  <title>SG-SST | Seguridad y Salud en el Trabajo</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      margin: 0; background: #f6fafd; font-family: 'Montserrat', Arial, sans-serif; color: #1A2740;
+      margin: 0; 
+      background: #f6fafd; 
+      font-family: 'Montserrat', Arial, sans-serif; 
+      color: #21344d;
     }
     header {
-      background: #1A2740; color: #fff; padding: 1.3rem 0 1.1rem 0; box-shadow: 0 2px 12px rgba(20,40,80,0.07); position: sticky; top: 0; z-index: 100;
+      background: transparent;
+      position: absolute; 
+      width: 100%;
+      top: 0; left: 0; 
+      z-index: 100;
     }
-    nav {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      max-width: 1080px;
-      margin: 0 auto;
-      position: relative;
-      padding: 0 1rem;
+    .nav-bar {
+      display: flex; 
+      justify-content: flex-end; 
+      align-items: center; 
+      padding: 2rem 3vw 0 3vw;
     }
-    .logo { font-weight: bold; font-size: 1.35rem; letter-spacing: 2px; color: #16c79a; }
-    .menu { display: flex; gap: 1.5rem; align-items: center;}
-    .menu a {
-      color: #fff; text-decoration: none; font-weight: 500; font-size: 1rem; padding-bottom: 0.1rem; border-bottom: 2px solid transparent; transition: border 0.2s;
+    .nav-bar a {
+      color: #fff; 
+      text-decoration: none; 
+      margin-left: 2rem; 
+      font-weight: 600; 
+      font-size: 1.08rem;
+      transition: color .15s;
     }
-    .menu a:hover, .menu .active { border-bottom: 2px solid #16c79a; }
-    .btn-cta {
-      background: #16c79a; color: #fff; border: none; border-radius: 22px; padding: 0.55rem 1.7rem; font-size: 1rem; font-weight: bold; margin-left: 1.2rem; box-shadow: 0 2px 10px rgba(22,199,154,0.09); transition: background .2s, transform .2s;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .btn-cta:hover, .btn-cta:focus {
-      background: #11886e;
-      transform: scale(1.07);
-    }
-    .hamburger {
-      display: none;
-      color: #16c79a;
-      font-size: 2rem;
-      margin-left: 1rem;
-      margin-right: 0.3rem;
-      cursor: pointer;
-      padding: 0.4rem 0.7rem;
-      border-radius: 0.5rem;
-      transition: background 0.2s;
-    }
-    .hamburger:focus, .hamburger:hover {
-      background: #e8f0fe;
-    }
-    @media (max-width: 780px) {
-      nav { flex-wrap: wrap; }
-      .menu {
-        position: absolute;
-        top: 64px;
-        right: 16px;
-        background: #fff;
-        box-shadow: 0 8px 20px rgba(22,199,154,0.10);
-        border-radius: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        padding: 1.2rem 1.4rem;
-        display: none;
-        min-width: 190px;
-        z-index: 200;
-      }
-      .menu.show {
-        display: flex;
-        animation: fadein .23s;
-      }
-      .menu a {
-        color: #1A2740;
-        border: none;
-        width: 100%;
-        padding: 0.8rem 0;
-        border-radius: 0.6rem;
-        text-align: left;
-        font-size: 1.08rem;
-      }
-      .menu a.btn-cta {
-        background: #16c79a;
-        color: #fff;
-        margin-left: 0;
-        text-align: center;
-        font-size: 1.08rem;
-        width: 100%;
-      }
-      .hamburger {
-        display: block;
-      }
-    }
-    @media (max-width: 780px) {
-      .menu { position: absolute; right: 12px; top: 61px;}
-    }
-    @keyframes fadein {
-      from { opacity: 0; transform: translateY(-20px);}
-      to   { opacity: 1; transform: translateY(0);}
-    }
+    .nav-bar a:hover { color: #16c79a; }
     .hero {
-      background: linear-gradient(110deg,#e8f0fe 80%,#f6fafd 100%);
-      padding: 4.5rem 1rem 3rem 1rem;
+      min-height: 350px;
+      background: linear-gradient(105deg, rgba(22,199,154,0.8) 0%, rgba(33,52,77,0.82) 100%), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      display: flex; 
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;
+      padding: 7rem 2vw 5rem 2vw;
+      text-align: center;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 2.1rem; 
+      font-weight: 800;
+      margin-bottom: 1.1rem;
+      text-shadow: 0 3px 16px rgba(30,40,80,0.21);
+    }
+    .hero p {
+      font-size: 1.18rem; 
+      font-weight: 400; 
+      margin-bottom: 2.1rem;
+      max-width: 530px;
+      margin-left: auto; margin-right: auto;
+    }
+    .hero .btn-hero {
+      background: #16c79a;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 0.88rem 2.3rem;
+      font-weight: 700;
+      font-size: 1.11rem;
+      box-shadow: 0 4px 24px rgba(22,199,154,0.13);
+      cursor: pointer;
+      transition: background .2s, transform .18s;
+    }
+    .hero .btn-hero:hover { background: #11886e; transform: translateY(-3px) scale(1.04); }
+
+    .beneficios {
+      background: linear-gradient(90deg,#0c87ac 0%,#16c79a 100%);
+      padding: 2.6rem 1rem 2.2rem 1rem;
+      color: #fff;
       text-align: center;
     }
-    .hero h1 { font-size: 2.35rem; font-weight: 700; margin-bottom: 1.1rem; }
-    .hero p { font-size: 1.2rem; color: #32405a; margin-bottom: 2rem; }
-    .hero-img {
-      width: 320px; max-width: 94vw; margin: 1.7rem auto 0 auto; display: block; filter: drop-shadow(0 4px 18px rgba(0,0,0,0.08)); border-radius: 1.5rem;
-      transition: transform .4s cubic-bezier(.25,1.5,.5,1.1);
+    .beneficios h2 {
+      font-size: 1.35rem;
+      margin-bottom: 2.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
-    .hero-img:hover { transform: scale(1.04); }
-    .section {
-      max-width: 1040px;
-      margin: 2.5rem auto;
+    .benefit-cards {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .benefit-card {
+      background: rgba(255,255,255,0.07);
+      border-radius: 1.3rem;
+      min-width: 220px; 
+      max-width: 290px; 
+      flex: 1 1 180px;
+      padding: 1.6rem 1rem 1.1rem 1rem;
+      box-shadow: 0 3px 12px rgba(22,199,154,0.13);
+      margin-bottom: 1rem;
+      text-align: center;
+      transition: box-shadow .21s, transform .17s;
+      border: 1.5px solid #ffffff22;
+    }
+    .benefit-card .icon {
+      font-size: 2.4rem;
+      margin-bottom: 1.2rem;
+      color: #ffe369;
+    }
+    .benefit-card h3 {
+      color: #fff; 
+      font-size: 1.13rem; 
+      margin-bottom: 0.7rem; 
+      font-weight: 700;
+    }
+    .benefit-card p { color: #eef6f9; font-size: 1.01rem;}
+    .benefit-card:hover { box-shadow: 0 8px 28px rgba(10,180,160,0.16); transform: translateY(-7px) scale(1.04);}
+    .planes-section {
       background: #fff;
-      padding: 2.3rem 1.3rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 2px 18px rgba(20,40,80,0.07);
+      padding: 3rem 0 2.2rem 0;
+      text-align: center;
     }
-    .section h2 { color: #1A2740; font-size: 2rem; margin-bottom: 1.5rem; text-align: center; font-weight: 700;}
-    .features, .services, .benefits { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;}
-    .card {
-      background: #f6fafd; border-radius: 1rem; padding: 1.5rem 1.2rem; min-width: 220px; max-width: 300px; flex: 1 1 220px;
-      box-shadow: 0 2px 6px rgba(22,199,154,0.09); text-align: center; transition: transform .22s cubic-bezier(.33,1.7,.6,1), box-shadow .23s;
+    .planes-section h2 {
+      color: #174d8c;
+      font-size: 1.4rem;
+      margin-bottom: 2.3rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .planes-cards {
+      display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-bottom: 2.2rem;
+    }
+    .plan-card {
+      background: #f7fafc;
+      border-radius: 1.2rem;
+      min-width: 220px; max-width: 270px; flex: 1 1 170px;
+      box-shadow: 0 2px 10px rgba(60,100,130,0.09);
+      padding: 1.4rem 1.3rem 1.1rem 1.3rem;
+      margin-bottom: 0.7rem;
+      border: 1.3px solid #e0e9f2;
+      text-align: left;
+      transition: box-shadow .2s, transform .14s;
+      position: relative;
+    }
+    .plan-card .plan-title {
+      color: #174d8c; 
+      font-weight: 700; 
+      font-size: 1.1rem; 
+      margin-bottom: 0.6rem;
+    }
+    .plan-card ul {
+      padding-left: 1.2rem;
+      margin: 0.7rem 0 0.8rem 0;
+      font-size: 0.97rem;
+      color: #2b405d;
+      line-height: 1.6;
+    }
+    .plan-card .btn-plan {
+      display: block;
+      width: 100%;
+      background: #16c79a;
+      color: #fff;
+      border: none;
+      border-radius: 22px;
+      padding: 0.7rem 0;
+      font-weight: 700;
+      font-size: 1.07rem;
+      text-align: center;
+      margin-top: 1.2rem;
       cursor: pointer;
+      transition: background .17s, transform .13s;
     }
-    .card i { font-size: 2.2rem; color: #16c79a; margin-bottom: 1rem; transition: transform .22s cubic-bezier(.33,1.7,.6,1), color .2s; }
-    .card:hover, .card:focus {
-      transform: translateY(-8px) scale(1.04);
-      box-shadow: 0 8px 32px rgba(22,199,154,0.13);
-      background: #e8f0fe;
+    .plan-card .btn-plan:hover { background: #0c87ac; transform: scale(1.03);}
+    .form-section {
+      padding: 2.8rem 1rem 2.3rem 1rem;
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      background: #f9fbfe;
     }
-    .card:hover i, .card:focus i {
-      transform: scale(1.21) rotate(-6deg);
-      color: #11886e;
+    .form-box {
+      background: #fff;
+      padding: 2.2rem 1.2rem 1.6rem 1.2rem;
+      border-radius: 1.3rem;
+      box-shadow: 0 3px 18px rgba(50,110,180,0.09);
+      max-width: 500px;
+      width: 100%;
     }
-    .card h3 { margin: 0.3rem 0 0.6rem 0; font-size: 1.16rem; color: #1A2740; font-weight: 600;}
-    .card p { color: #45526c; font-size: 0.98rem;}
-    .benefits .card { background: #e8f0fe; }
-    .benefits .card:hover { background: #d5ecf9; }
-    .process {
-      display: flex; flex-direction: row; gap: 2rem; justify-content: center; margin-top: 1.2rem; flex-wrap: wrap;
+    .form-box h2 {
+      color: #174d8c; 
+      font-weight: 800; 
+      font-size: 1.19rem; 
+      margin-bottom: 1.7rem; 
+      text-align: center;
     }
-    .process-step {
-      background: #f6fafd; border-radius: 0.8rem; padding: 1.1rem 1rem; min-width: 160px; box-shadow: 0 2px 8px rgba(22,199,154,0.06); text-align: center;
-      transition: transform .22s cubic-bezier(.33,1.7,.6,1), box-shadow .23s;
-      cursor: pointer;
+    .form-box input,
+    .form-box select {
+      width: 90%;
+      border: 1.4px solid #d8e0ee;
+      border-radius: 0.7rem;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #f7fafc;
+      color: #21344d;
+      transition: border-color .18s;
     }
-    .process-step strong { display: block; color: #16c79a; font-size: 1.1rem;}
-    .process-step span { font-size: 0.97rem; color: #32405a; }
-    .process-step:hover, .process-step:focus {
-      transform: translateY(-6px) scale(1.06);
-      box-shadow: 0 6px 22px rgba(22,199,154,0.12);
-      background: #e8f0fe;
-    }
-    .contact-form {
-      max-width: 460px; margin: 0 auto;
-      display: flex; flex-direction: column; gap: 1.1rem;
-    }
-    .contact-form input, .contact-form textarea {
-      border: 1px solid #ccd6df; border-radius: 0.5rem; padding: 0.7rem; font-size: 1rem; font-family: inherit;
-      background: #f6fafd; color: #1A2740; transition: border-color .2s;
-    }
-    .contact-form input:focus, .contact-form textarea:focus {
+    .form-box input:focus,
+    .form-box select:focus {
       border-color: #16c79a; outline: none;
     }
-    .contact-form textarea { min-height: 90px; }
-    .contact-form button { align-self: flex-end; }
+    .arl-levels {
+      display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.1rem;
+    }
+    .arl-levels label {
+      display: flex; align-items: center; justify-content: center; background: #f7fafc;
+      color: #0c87ac; border-radius: 7px; cursor: pointer; width: 36px; height: 36px;
+      font-weight: 600; font-size: 1rem; transition: background .17s, color .17s;
+      border: 1.2px solid #e0e9f2;
+    }
+    .arl-levels input[type=radio] {
+      display: none;
+    }
+    .arl-levels input[type=radio]:checked + span {
+      background: #16c79a; color: #fff; border-color: #16c79a;
+    }
+    .form-box button {
+      width: 100%;
+      background: #174d8c;
+      color: #fff;
+      border: none;
+      border-radius: 22px;
+      padding: 0.92rem 0;
+      font-size: 1.11rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      transition: background .2s, transform .14s;
+    }
+    .form-box button:hover { background: #0c87ac; transform: scale(1.03);}
     .whatsapp-float {
-      position: fixed; bottom: 25px; right: 25px; background: #25D366; color: #fff;
-      border-radius: 50%; width: 55px; height: 55px;
+      position: fixed; bottom: 24px; right: 23px; background: #25D366; color: #fff;
+      border-radius: 50%; width: 52px; height: 52px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 2rem; box-shadow: 0 2px 10px rgba(37,211,102,0.17); z-index: 999; text-decoration: none; transition: background .2s, transform .19s;
+      font-size: 2.05rem; box-shadow: 0 2px 12px rgba(37,211,102,0.14); z-index: 999; text-decoration: none; transition: background .2s, transform .18s;
     }
-    .whatsapp-float:hover, .whatsapp-float:focus { background: #128c7e; transform: scale(1.12);}
-    .whatsapp-pulse {
-      animation: pulsewh 1.7s infinite;
-    }
-    @keyframes pulsewh {
-      0% { box-shadow: 0 0 0 0 #25d36644; }
-      70% { box-shadow: 0 0 0 18px #25d36608; }
-      100% { box-shadow: 0 0 0 0 #25d36644; }
-    }
+    .whatsapp-float:hover, .whatsapp-float:focus { background: #128c7e; transform: scale(1.08);}
     footer {
-      background: #1A2740; color: #fff; text-align: center; padding: 1.1rem 0; margin-top: 2.5rem; font-size: 1rem;
+      background: #21344d; color: #fff; text-align: center; padding: 1.2rem 0; font-size: 1rem; margin-top: 2.3rem;
     }
     @media (max-width: 900px) {
-      .features, .services, .benefits, .process { flex-direction: column; gap: 1.1rem;}
-      .section { padding: 1.1rem 0.6rem; }
-      .hero-img { width: 220px;}
-      .menu { gap: 1rem; }
+      .benefit-cards, .planes-cards { flex-direction: column; gap: 1rem;}
+      .section, .form-section { padding-left: 0.5rem; padding-right: 0.5rem;}
+      .nav-bar { padding-left: 2vw; padding-right: 2vw;}
     }
     @media (max-width: 600px) {
-      nav { flex-direction: column; gap: 0.8rem; }
-      .btn-cta { margin-left: 0; margin-top: 0.7rem;}
-      .whatsapp-float { width: 65px; height: 65px; font-size: 2.3rem; }
+      .hero { padding: 5.5rem 1vw 3.5rem 1vw; }
+      .form-box { padding: 1.3rem 0.4rem; }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- NAVBAR -->
   <header>
-    <nav>
-      <div class="logo">SG-SST</div>
-      <div style="flex:1"></div>
-      <div class="menu" id="menu">
-        <a href="#inicio" class="active">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#contacto" class="btn-cta">Cotizar</a>
-      </div>
-      <div class="hamburger" id="hamburger" aria-label="Abrir menú" tabindex="0">
-        <i class="fas fa-bars"></i>
-      </div>
+    <nav class="nav-bar">
+      <a href="#beneficios">Beneficios</a>
+      <a href="#planes">Planes</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
   <!-- HERO -->
-  <section class="hero" id="inicio">
-    <h1>Implementa tu SG-SST con expertos en Bogotá</h1>
-    <p>Te ayudamos a cumplir con la normatividad de Seguridad y Salud en el Trabajo, cuidando a tus colaboradores y evitando sanciones.</p>
-    <a href="#contacto" class="btn-cta">Solicitar Cotización</a>
-    <img src="https://img.freepik.com/vector-premium/concepto-diseno-ilustracion-vectorial-plano-prevencion-riesgos-laborales-salud-seguridad-industrial-hombre-casco-senalizacion-seguridad-icono-casco-herramientas-proteccion-plantilla-sitio-web_2175-1513.jpg" alt="SG-SST Ilustración" class="hero-img" />
-  </section>
-  <!-- QUÉ ES SG-SST -->
-  <section class="section">
-    <h2>¿Qué es el SG-SST?</h2>
-    <div class="features">
-      <div class="card" tabindex="0">
-        <i class="fas fa-user-shield"></i>
-        <h3>Gestión de Riesgos</h3>
-        <p>Identificamos y prevenimos accidentes y enfermedades laborales en tu empresa.</p>
-      </div>
-      <div class="card" tabindex="0">
-        <i class="fas fa-balance-scale"></i>
-        <h3>Cumplimiento Legal</h3>
-        <p>Adaptamos tu empresa a la Ley 1562 de 2012 y normas vigentes en Colombia.</p>
-      </div>
-      <div class="card" tabindex="0">
-        <i class="fas fa-people-group"></i>
-        <h3>Bienestar Laboral</h3>
-        <p>Mejora el clima y la productividad de tu equipo, reduciendo el ausentismo.</p>
-      </div>
-    </div>
-  </section>
-  <!-- SERVICIOS -->
-  <section class="section" id="servicios">
-    <h2>Nuestros Servicios</h2>
-    <div class="services">
-      <div class="card" tabindex="0">
-        <i class="fas fa-clipboard-check"></i>
-        <h3>Diagnóstico Inicial</h3>
-        <p>Auditoría de procesos y documentación actual para detectar brechas.</p>
-      </div>
-      <div class="card" tabindex="0">
-        <i class="fas fa-tools"></i>
-        <h3>Implementación SG-SST</h3>
-        <p>Diseño, capacitación, y acompañamiento completo en la creación del sistema.</p>
-      </div>
-      <div class="card" tabindex="0">
-        <i class="fas fa-file-contract"></i>
-        <h3>Soporte y Actualización</h3>
-        <p>Mantenimiento anual, actualización de normativas y asistencia legal.</p>
-      </div>
-      <div class="card" tabindex="0">
-        <i class="fas fa-chalkboard-teacher"></i>
-        <h3>Capacitación</h3>
-        <p>Formación a empleados sobre protocolos y prevención de riesgos.</p>
-      </div>
-    </div>
+  <section class="hero">
+    <h1>¡Lleva tu empresa al siguiente nivel con SG-SST!</h1>
+    <p>
+      Nos convertimos en tu equipo de Seguridad y Salud en el Trabajo. Tranquilidad para ti, seguridad para ellos.
+    </p>
+    <a class="btn-hero" href="#planes">Ver Planes y Precios</a>
   </section>
   <!-- BENEFICIOS -->
-  <section class="section" id="beneficios">
-    <h2>Beneficios del SG-SST</h2>
-    <div class="benefits">
-      <div class="card" tabindex="0">
-        <i class="fas fa-check-circle"></i>
-        <h3>Evita Multas</h3>
-        <p>Cumple la ley y evita sanciones costosas por incumplimiento.</p>
+  <section class="beneficios" id="beneficios">
+    <h2>Beneficios Exclusivos al Contratarnos</h2>
+    <div class="benefit-cards">
+      <div class="benefit-card">
+        <div class="icon"><i class="fas fa-gift"></i></div>
+        <h3>1er Mes GRATIS</h3>
+        <p>En planes mensuales, el primer mes corre por nuestra cuenta.</p>
       </div>
-      <div class="card" tabindex="0">
-        <i class="fas fa-user-friends"></i>
-        <h3>Mejor Ambiente</h3>
-        <p>Ambiente de trabajo más seguro y saludable para todos.</p>
+      <div class="benefit-card">
+        <div class="icon"><i class="fas fa-id-card"></i></div>
+        <h3>Certificación de Brigada</h3>
+        <p>Incluimos sin costo la certificación para tu brigada de emergencias.</p>
       </div>
-      <div class="card" tabindex="0">
-        <i class="fas fa-arrow-up"></i>
-        <h3>Mayor Productividad</h3>
-        <p>Reducción de accidentes, más motivación y rendimiento.</p>
-      </div>
-    </div>
-  </section>
-  <!-- PROCESO DE TRABAJO -->
-  <section class="section">
-    <h2>Nuestro Proceso</h2>
-    <div class="process">
-      <div class="process-step" tabindex="0">
-        <strong>1</strong>
-        <span>Diagnóstico</span>
-      </div>
-      <div class="process-step" tabindex="0">
-        <strong>2</strong>
-        <span>Plan de acción</span>
-      </div>
-      <div class="process-step" tabindex="0">
-        <strong>3</strong>
-        <span>Implementación</span>
-      </div>
-      <div class="process-step" tabindex="0">
-        <strong>4</strong>
-        <span>Capacitación y soporte</span>
+      <div class="benefit-card">
+        <div class="icon"><i class="fas fa-money-bill-wave"></i></div>
+        <h3>Paga 12, recibe 14</h3>
+        <p>Aprovecha nuestra oferta anual y obtén dos meses adicionales.</p>
       </div>
     </div>
   </section>
-  <!-- CONTACTO -->
-  <section class="section" id="contacto">
-    <h2>Contáctanos</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo electrónico" required>
-      <input type="tel" placeholder="Teléfono">
-      <textarea placeholder="¿En qué podemos ayudarte?" required></textarea>
-      <button type="submit" class="btn-cta">Enviar mensaje</button>
-    </form>
-    <p style="text-align:center; margin-top:1rem;">O escríbenos por WhatsApp para atención inmediata.</p>
+  <!-- PLANES / COMPARATIVA -->
+  <section class="planes-section" id="planes">
+    <h2>1. Compara las Características Principales</h2>
+    <div class="planes-cards">
+      <div class="plan-card">
+        <div class="plan-title">7 Estándares</div>
+        <ul>
+          <li>Gestión de 7 estándares</li>
+          <li>13 capacitaciones</li>
+          <li>Certificado resolución 312</li>
+          <br><br>
+        </ul>
+        <button class="btn-plan">Me Interesa</button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-title">F5 21 Estándares</div>
+        <ul>
+          <li>Gestión de 21 estándares</li>
+          <li>40 capacitaciones</li>
+          <li>60 acciones en plan de trabajo</li>
+          <li>Certificado resolución 312</li>
+        </ul>
+        <button class="btn-plan">Me Interesa</button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-title">F6 60 Estándares</div>
+        <ul>
+          <li>Gestión de 60 estándares</li>
+          <li>68 capacitaciones</li>
+          <li>100 acciones en plan de trabajo</li>
+          <li>Certificado resolución 312</li>
+        </ul>
+        <button class="btn-plan">Me Interesa</button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-title">Decreto 1072 Completo</div>
+        <ul>
+          <li>Gestión de Decreto 1072</li>
+          <li>82 capacitaciones</li>
+          <li>180 acciones en plan de trabajo</li>
+          <li>Certificados 312 y D. 1072</li>
+        </ul>
+        <button class="btn-plan">Me Interesa</button>
+      </div>
+    </div>
+  </section>
+  <!-- FORMULARIO -->
+  <section class="form-section" id="contacto">
+    <div class="form-box">
+      <h2>2. Regístrate para ver Precios y Detalles</h2>
+      <form>
+        <input type="text" placeholder="Razón Social" required>
+        <input type="text" placeholder="Nombre de Contacto" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Teléfono" required>
+        <input type="number" placeholder="Número de Trabajadores" min="1" required>
+        <label style="display:block;margin-bottom:0.7rem;">Nivel de Riesgo ARL:</label>
+        <div class="arl-levels">
+          <label><input type="radio" name="arl" value="1"><span>1</span></label>
+          <label><input type="radio" name="arl" value="2"><span>2</span></label>
+          <label><input type="radio" name="arl" value="3"><span>3</span></label>
+          <label><input type="radio" name="arl" value="4"><span>4</span></label>
+          <label><input type="radio" name="arl" value="5"><span>5</span></label>
+        </div>
+        <button type="submit"><i class="fas fa-search"></i> Ver Precios y Registrar</button>
+      </form>
+    </div>
   </section>
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/573001112233" class="whatsapp-float whatsapp-pulse" target="_blank" title="WhatsApp" aria-label="Chat por WhatsApp">
+  <a href="https://wa.me/573001112233" class="whatsapp-float" target="_blank" title="WhatsApp" aria-label="Chat por WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
   <!-- FOOTER -->
   <footer>
-    SG-SST Bogotá &copy; 2025 | Seguridad y Salud en el Trabajo
+    © 2025 SG-SST | Todos los derechos reservados.
   </footer>
-  <!-- NAV HAMBURGER SCRIPT -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-    // Cierra el menú al hacer click fuera o en un enlace
-    document.addEventListener('click', (e) => {
-      if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-        menu.classList.remove('show');
-      }
-      if (e.target.tagName === 'A' && menu.classList.contains('show')) {
-        menu.classList.remove('show');
-      }
-    });
-    // Accesibilidad: abre/cierra con Enter/Space
-    hamburger.addEventListener('keydown', (e) => {
-      if (e.key === "Enter" || e.key === " "){
-        menu.classList.toggle('show');
-      }
-    });
-  </script>
 </body>
 </html>
